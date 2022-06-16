@@ -21,7 +21,7 @@ namespace UnityStandardAssets.Utility
 
         private void Start()
         {
-            m_OriginalStrength = sunLight.shadowStrength;
+          //  m_OriginalStrength = sunLight.shadowStrength;
         }
 
 
@@ -44,8 +44,8 @@ namespace UnityStandardAssets.Utility
             float i = Mathf.InverseLerp(minHeight, maxHeight, m_SmoothHeight);
 
             QualitySettings.shadowDistance = Mathf.Lerp(minShadowDistance, maxShadowDistance, i);
-            sunLight.shadowBias = Mathf.Lerp(minShadowBias, maxShadowBias, 1 - ((1 - i)*(1 - i)));
-            sunLight.shadowStrength = Mathf.Lerp(m_OriginalStrength, 0, i);
+            //sunLight.shadowBias = Mathf.Lerp(minShadowBias, maxShadowBias, 1 - ((1 - i)*(1 - i)));
+           // sunLight.shadowStrength = Mathf.Lerp(m_OriginalStrength, 0, i);
         }
     }
 }

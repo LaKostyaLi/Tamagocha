@@ -9,13 +9,15 @@ public class Indicators : MonoBehaviour
     [SerializeField] private Image _bedBar;
     [SerializeField] private Image _toiletBar;
 
+
+
     public float _eatAmount = 100;
     public float _bedAmount = 100;
     public float _toiletAmount = 100;
 
-    public float _secondsToEmptyEat;
-    public float _secondsToEmptyBed;
-    public float _secondsToEmptyToilet;
+    //private float _secondsToEmptyEat=10f;
+    private float _secondsToEmptyBed=500f;
+    private float _secondsToEmptyToilet=700f;
 
     private void Start()
     {
@@ -28,11 +30,12 @@ public class Indicators : MonoBehaviour
     {
         if(_eatAmount>0)
         {
-            _eatAmount -= 100 / _secondsToEmptyEat * Time.deltaTime;
+            //_eatAmount -= 100 / _secondsToEmptyEat * Time.deltaTime;
+            _eatAmount -= Time.deltaTime;
             _eatBar.fillAmount = _eatAmount / 100;
         }
 
-        if(_bedAmount>0)
+        if (_bedAmount>0)
         {
             _bedAmount -= 100 / _secondsToEmptyBed * Time.deltaTime;
             _bedBar.fillAmount = _bedAmount / 100;
